@@ -2,7 +2,7 @@
 
 ## Final repository cleanup and GitHub handoff (2026-10-14)
 
-Local implementation is complete. GitHub handoff is underway; no deployment or new functionality was performed. This section supersedes earlier next-task instructions and references to the absence of Git. Historical milestone decisions and verification records are preserved.
+Local implementation and GitHub handoff are complete. The user approved the first push after requesting public visibility; `main` was pushed successfully. No deployment or new functionality was performed. This section supersedes earlier next-task instructions and references to the absence of Git. Historical milestone decisions and verification records are preserved.
 
 Read AGENTS, README and all five requested documentation files; inspected project files, tests, environment examples and tooling. The folder had no Git metadata, prior tracked files, history, branch or remote, so there was no historical credential exposure to inspect. Initialized Git on `main` without discarding local work. Reviewed all candidate files with credential-pattern detection and an in-memory comparison against local sensitive environment values; no credential findings. Reviewed synthetic test password literals as isolated test fixtures, not operational credentials. Local environment values were not printed or changed. `.env.example` files contain only configuration examples.
 
@@ -17,14 +17,14 @@ Expanded ignore rules for test output, screenshots, temporary/debug files, brows
 | Booking/admin regression coverage | Real database concurrency, occupancy/indexes, rollback, cancellation, snapshots/privacy, Any Available, auth/session/Origin/CSRF/rate limits, idempotence, catalog/schedules and guarded reset passed |
 | Database safety | Fresh exact random guarded booking/admin databases; cleanup limited to those names. No development seed/reset or normal-database destructive operation was run |
 | GitHub access | Restricted auth check initially reported invalid credentials; network-enabled check verified existing authentication without credential changes |
-| Destination | Created previously absent `https://github.com/EdwardMovsesyan91/studio-north` as private; subsequently changed to PUBLIC at the user's explicit request and verified empty. Intended branch `main`; first push awaits explicit user approval |
+| Destination | Created previously absent `https://github.com/EdwardMovsesyan91/studio-north` as private; subsequently changed to PUBLIC at the user's explicit request. Approved first push succeeded on `main`; upstream tracking is configured |
 | Browser checks this handoff | Not rerun: no application code changed. Prior Chrome development/preview verification remains historical evidence, not a fresh browser pass |
 
 Remaining limitations: not publicly deployed; hosted HTTPS cookie/reverse-proxy behavior unverified; cross-browser and screen-reader/full accessibility coverage incomplete; native Unix shutdown and real outage recovery not verified. Production load/security/retention/backups/monitoring remain outside scope. Existing feature limits remain: no payments, accounts, notifications, rescheduling or pending-hold expiry; newest-200 admin list without pagination; shared synthetic demo changes; single business/owner and Pacific/USD interface; client-rendered marketing metadata. No production-readiness claim.
 
 Screenshot recommendation: local ignored `.tools/screenshots/`, desktop 1440px/mobile 390px; Home in both themes, Services, Barbers, Gallery, booking review and committed confirmation, and synthetic admin overview/appointments/schedules. Publish only after reviewing for synthetic data and separate authorization; generated screenshots are excluded from this handoff.
 
-Prepared initial handoff commit containing the implementation and final documentation; no history rewrite or force-push. Stop at the approval gate before the first push.
+Initial handoff commit `148ba42` contains the implementation and final documentation; `792772b` records the requested public visibility. The approved first push included both commits. A final documentation commit records completed handoff. No history rewrite or force-push. Stop after repository handoff; no deployment.
 
 ## Milestones 5–8 — booking and protected administration (2026-10-13)
 
