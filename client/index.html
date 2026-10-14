@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* Paint the selected canvas before the application stylesheet arrives. */
+      html { background: var(--color-canvas, #f5f2eb); color-scheme: light; }
+      html[data-theme="dark"] { background: var(--color-canvas, #181a19); color-scheme: dark; }
+    </style>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem('studio-north-theme');
+        if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+      } catch { /* Keep the default dark theme without persistent storage. */ }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Studio North — a fictional premium barbershop portfolio demo." />
+    <meta property="og:title" content="Studio North | Fictional portfolio demo" />
+    <meta property="og:description" content="A fictional premium Portland barbershop concept. No real services or bookings." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Studio North" />
+    <title>Studio North | Fictional portfolio demo</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

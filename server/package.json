@@ -1,0 +1,28 @@
+{
+  "name": "@studio-north/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=.env src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "start": "node --env-file-if-exists=.env dist/index.js",
+    "test": "npm run build && node --test test/*.test.js",
+    "test:integration": "npm run build && node --env-file-if-exists=.env --test test/integration/*.test.js",
+    "seed": "npm run build && node --env-file-if-exists=.env dist/seed.js",
+    "admin:setup": "npm run build && node --env-file-if-exists=.env dist/admin-setup.js",
+    "demo:reset": "npm run build && node --env-file-if-exists=.env dist/demo-reset.js"
+  },
+  "dependencies": {
+    "bcryptjs": "3.0.3",
+    "express": "5.3.0",
+    "mongoose": "9.11.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.6",
+    "tsx": "4.23.15"
+  }
+}
